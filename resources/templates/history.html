@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+    <h1>Stored Runs</h1>
+	<table class="table">
+	    <thead>
+	        <tr>
+	            <th>Type</th>
+	            <th>Result</th>
+	            <th>Target</th>
+	        <tr>
+	    </thead>
+	    <tbody>
+	        {% for item in results %}
+	        <tr>
+	            <td>{{ item[1] }}</td>
+	            <td>{{ item[2] }}</td>
+	            <td>{{ item[3] }}</td>
+	        </tr>
+	        {% endfor %}
+	    </tbody>
+	</table>
+{% endblock %}

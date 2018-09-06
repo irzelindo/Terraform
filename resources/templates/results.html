@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+    <h1>Subdomain Enumeration Results</h1>
+    <ul>
+        {% for subdomain in results %}
+        <li>{{subdomain}}</li>
+        {% endfor %}
+     </ul>
+{% endblock %}
