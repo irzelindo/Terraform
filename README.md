@@ -14,4 +14,3 @@ secret_key = "YOUR_SECRET_KEY"
 
 * Initialize Terraform - `terraform init`
 * Run it = `./launch.sh`
-
