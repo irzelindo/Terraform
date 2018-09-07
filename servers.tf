@@ -1,6 +1,6 @@
 resource "aws_instance" "bastion_server_a" {
   # Ubuntu Server 16.04 LTS (HVM), SSD Volume Type
-  ami           = "ami-ba602bc2"
+  ami           = "ami-027583e616ca104df"
   instance_type = "t2.micro"
 
   associate_public_ip_address = "true"
@@ -22,7 +22,7 @@ resource "aws_instance" "bastion_server_a" {
 
 resource "aws_instance" "bastion_server_b" {
   # Ubuntu Server 16.04 LTS (HVM), SSD Volume Type
-  ami           = "ami-ba602bc2"
+  ami           = "ami-027583e616ca104df"
   instance_type = "t2.micro"
 
   associate_public_ip_address = "true"
@@ -44,7 +44,7 @@ resource "aws_instance" "bastion_server_b" {
 
 resource "aws_instance" "project_webserver_a" {
   # Ubuntu Server 16.04 LTS (HVM), SSD Volume Type
-  ami                         = "ami-ba602bc2"
+  ami                         = "ami-027583e616ca104df"
   instance_type               = "t2.micro"
   key_name                    = "${var.pem_key}"
   subnet_id                   = "${aws_subnet.Public_webserver_zone_a.id}"
@@ -60,17 +60,17 @@ resource "aws_instance" "project_webserver_a" {
   #!/bin/bash
   sudo apt-get update
   sudo apt-get -y install awscli
-  sudo mkdir /srv/www
-  aws s3 cp s3://"${aws_s3_bucket.server-files-bucket.bucket}"/server-files.tar.gz /srv/www/server-files.tar.gz
-  aws s3 cp s3://"${aws_s3_bucket.server-files-bucket.bucket}"/bootstrap.sh /tmp/bootstrap.sh
-  sudo chmod +x /tmp/bootstrap.sh
-  sudo  /tmp/bootstrap.sh > /tmp/stdout.txt 2> /tmp/stderr.txt
+  # sudo mkdir /srv/www
+  # aws s3 cp s3://"${aws_s3_bucket.server-files-bucket.bucket}"/server-files.tar.gz /srv/www/server-files.tar.gz
+  # aws s3 cp s3://"${aws_s3_bucket.server-files-bucket.bucket}"/bootstrap.sh /tmp/bootstrap.sh
+  # sudo chmod +x /tmp/bootstrap.sh
+  # sudo  /tmp/bootstrap.sh > /tmp/stdout.txt 2> /tmp/stderr.txt
   EOF
 }
 
 resource "aws_instance" "project_webserver_b" {
   # Ubuntu Server 16.04 LTS (HVM), SSD Volume Type
-  ami                         = "ami-ba602bc2"
+  ami                         = "ami-027583e616ca104df"
   instance_type               = "t2.micro"
   key_name                    = "${var.pem_key}"
   subnet_id                   = "${aws_subnet.Public_webserver_zone_b.id}"
@@ -86,11 +86,11 @@ resource "aws_instance" "project_webserver_b" {
   #!/bin/bash
   sudo apt-get update
   sudo apt-get -y install awscli
-  sudo mkdir /srv/www
-  aws s3 cp s3://"${aws_s3_bucket.server-files-bucket.bucket}"/server-files.tar.gz /srv/www/server-files.tar.gz
-  aws s3 cp s3://"${aws_s3_bucket.server-files-bucket.bucket}"/bootstrap.sh /tmp/bootstrap.sh
-  sudo chmod +x /tmp/bootstrap.sh
-  sudo  /tmp/bootstrap.sh > stdout.txt 2> stderr.txt
+  # sudo mkdir /srv/www
+  # aws s3 cp s3://"${aws_s3_bucket.server-files-bucket.bucket}"/server-files.tar.gz /srv/www/server-files.tar.gz
+  # aws s3 cp s3://"${aws_s3_bucket.server-files-bucket.bucket}"/bootstrap.sh /tmp/bootstrap.sh
+  # sudo chmod +x /tmp/bootstrap.sh
+  # sudo  /tmp/bootstrap.sh > stdout.txt 2> stderr.txt
   EOF
 }
 

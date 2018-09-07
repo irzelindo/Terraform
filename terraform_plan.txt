@@ -1,0 +1,223 @@
+[0m[1mRefreshing Terraform state in-memory prior to plan...[0m
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+[0m
+[0m[1maws_s3_bucket.server-files-bucket: Refreshing state... (ID: server-files-bucket)[0m
+[0m[1maws_iam_role.webserver_role: Refreshing state... (ID: webserver_role)[0m
+[0m[1maws_vpc_dhcp_options.p2dhcp: Refreshing state... (ID: dopt-03349144725048fd0)[0m
+[0m[1maws_eip.forNat: Refreshing state... (ID: eipalloc-0cd80a3ec7d8181eb)[0m
+[0m[1maws_vpc.P2_VPC: Refreshing state... (ID: vpc-02d6facd4168b0626)[0m
+[0m[1maws_iam_instance_profile.webserver_profile: Refreshing state... (ID: webserver_profile)[0m
+[0m[1maws_iam_policy_attachment.s3_read_only: Refreshing state... (ID: s3-read-only)[0m
+[0m[1maws_subnet.Public_bastion_zone_b: Refreshing state... (ID: subnet-03907b7d6f52a2222)[0m
+[0m[1maws_security_group.Webserver_zone_b: Refreshing state... (ID: sg-0b294b43962dcb8a0)[0m
+[0m[1maws_subnet.Public_bastion_zone_a: Refreshing state... (ID: subnet-0e62cfae7a0c6abf4)[0m
+[0m[1maws_security_group.Webserver_zone_a: Refreshing state... (ID: sg-07ea4ab7085d0c3a2)[0m
+[0m[1maws_subnet.Private-db-zone-b: Refreshing state... (ID: subnet-0f88e2af618a34ebc)[0m
+[0m[1maws_security_group.DB_server: Refreshing state... (ID: sg-07e0255ecdf7e49fc)[0m
+[0m[1maws_route53_zone.primary: Refreshing state... (ID: Z1OP6WUGNDKGM7)[0m
+[0m[1maws_subnet.Public_webserver_zone_b: Refreshing state... (ID: subnet-0178385a4cbb0b1e4)[0m
+[0m[1maws_alb_target_group.alb_front_http_webservers: Refreshing state... (ID: arn:aws:elasticloadbalancing:us-west-2:...tgroup/alb-front-http/711571546f461971)[0m
+[0m[1maws_security_group.bastion_server: Refreshing state... (ID: sg-03c1c9379b70d251a)[0m
+[0m[1maws_subnet.Private-db-zone-a: Refreshing state... (ID: subnet-071284ac10d7adb79)[0m
+[0m[1maws_vpc_dhcp_options_association.dns_resolver: Refreshing state... (ID: dopt-03349144725048fd0-vpc-02d6facd4168b0626)[0m
+[0m[1maws_security_group.load_balancer_security_group: Refreshing state... (ID: sg-0058f29e46acaa921)[0m
+[0m[1maws_subnet.Public_webserver_zone_a: Refreshing state... (ID: subnet-01660dd8f3a3bc286)[0m
+[0m[1maws_internet_gateway.gw: Refreshing state... (ID: igw-026f9c4b1adace3cd)[0m
+[0m[1maws_db_subnet_group.db: Refreshing state... (ID: db)[0m
+[0m[1maws_lb.project_lb: Refreshing state... (ID: arn:aws:elasticloadbalancing:us-west-2:...roject-2-loadbalancer/51ba0da68017e20c)[0m
+[0m[1maws_route_table.public: Refreshing state... (ID: rtb-0945cb71496f2a3d2)[0m
+[0m[1maws_nat_gateway.Public_webserver_zone_a: Refreshing state... (ID: nat-00eb4f54bdb42bad1)[0m
+[0m[1maws_s3_bucket_object.boot-file: Refreshing state... (ID: bootstrap.sh)[0m
+[0m[1maws_s3_bucket_object.server-files: Refreshing state... (ID: server-files.tar.gz)[0m
+[0m[1maws_main_route_table_association.new_main_route_table: Refreshing state... (ID: rtbassoc-0e377bb72efded761)[0m
+[0m[1maws_route_table_association.Public_webserver_zone_a: Refreshing state... (ID: rtbassoc-03f3a5e3d22241fcb)[0m
+[0m[1maws_route_table_association.Public_bastion_zone_b: Refreshing state... (ID: rtbassoc-0d44ee16ccfbd6d76)[0m
+[0m[1maws_route_table_association.Public_webserver_zone_b: Refreshing state... (ID: rtbassoc-0717b0b5db654ee88)[0m
+[0m[1maws_route_table_association.Public_bastion_zone_a: Refreshing state... (ID: rtbassoc-097fe0158fc411475)[0m
+[0m[1maws_route_table.private: Refreshing state... (ID: rtb-0041c77d00596de00)[0m
+[0m[1maws_db_instance.private-DB: Refreshing state... (ID: terraform-20180906225400735600000002)[0m
+[0m[1maws_route_table_association.Private-db-zone-b: Refreshing state... (ID: rtbassoc-0ab30f362bc75df4e)[0m
+[0m[1maws_route_table_association.Private-db-zone-a: Refreshing state... (ID: rtbassoc-0db1b9637922fb797)[0m
+[0m[1maws_lb_listener.front_end: Refreshing state... (ID: arn:aws:elasticloadbalancing:us-west-2:...ncer/51ba0da68017e20c/83a8ac0fac21ef33)[0m
+[0m[1maws_route53_record.database: Refreshing state... (ID: Z1OP6WUGNDKGM7_database.p2.internal_CNAME)[0m
+
+------------------------------------------------------------------------
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  [32m+[0m create
+[0m
+Terraform will perform the following actions:
+
+[32m  [32m+[0m [32maws_alb_target_group_attachment.alb_webserver_a_http
+[0m      id:                                <computed>
+      port:                              "80"
+      target_group_arn:                  "arn:aws:elasticloadbalancing:us-west-2:729972032551:targetgroup/alb-front-http/711571546f461971"
+      target_id:                         "${aws_instance.project_webserver_a.id}"
+[0m
+[0m[32m  [32m+[0m [32maws_alb_target_group_attachment.alb_webserver_b_http
+[0m      id:                                <computed>
+      port:                              "80"
+      target_group_arn:                  "arn:aws:elasticloadbalancing:us-west-2:729972032551:targetgroup/alb-front-http/711571546f461971"
+      target_id:                         "${aws_instance.project_webserver_b.id}"
+[0m
+[0m[32m  [32m+[0m [32maws_instance.bastion_server_a
+[0m      id:                                <computed>
+      ami:                               "ami-ba602bc2"
+      arn:                               <computed>
+      associate_public_ip_address:       "true"
+      availability_zone:                 <computed>
+      cpu_core_count:                    <computed>
+      cpu_threads_per_core:              <computed>
+      ebs_block_device.#:                <computed>
+      ephemeral_block_device.#:          <computed>
+      get_password_data:                 "false"
+      instance_state:                    <computed>
+      instance_type:                     "t2.micro"
+      ipv6_address_count:                <computed>
+      ipv6_addresses.#:                  <computed>
+      key_name:                          "udacity_student"
+      network_interface.#:               <computed>
+      network_interface_id:              <computed>
+      password_data:                     <computed>
+      placement_group:                   <computed>
+      primary_network_interface_id:      <computed>
+      private_dns:                       <computed>
+      private_ip:                        <computed>
+      public_dns:                        <computed>
+      public_ip:                         <computed>
+      root_block_device.#:               <computed>
+      security_groups.#:                 <computed>
+      source_dest_check:                 "true"
+      subnet_id:                         "subnet-0e62cfae7a0c6abf4"
+      tags.%:                            "1"
+      tags.Name:                         "project_2_bastion_server_zone_a"
+      tenancy:                           <computed>
+      user_data:                         "c72996f0c159438d04705e005494b573dc848e1f"
+      volume_tags.%:                     <computed>
+      vpc_security_group_ids.#:          "1"
+      vpc_security_group_ids.4101892314: "sg-03c1c9379b70d251a"
+[0m
+[0m[32m  [32m+[0m [32maws_instance.bastion_server_b
+[0m      id:                                <computed>
+      ami:                               "ami-ba602bc2"
+      arn:                               <computed>
+      associate_public_ip_address:       "true"
+      availability_zone:                 <computed>
+      cpu_core_count:                    <computed>
+      cpu_threads_per_core:              <computed>
+      ebs_block_device.#:                <computed>
+      ephemeral_block_device.#:          <computed>
+      get_password_data:                 "false"
+      instance_state:                    <computed>
+      instance_type:                     "t2.micro"
+      ipv6_address_count:                <computed>
+      ipv6_addresses.#:                  <computed>
+      key_name:                          "udacity_student"
+      network_interface.#:               <computed>
+      network_interface_id:              <computed>
+      password_data:                     <computed>
+      placement_group:                   <computed>
+      primary_network_interface_id:      <computed>
+      private_dns:                       <computed>
+      private_ip:                        <computed>
+      public_dns:                        <computed>
+      public_ip:                         <computed>
+      root_block_device.#:               <computed>
+      security_groups.#:                 <computed>
+      source_dest_check:                 "true"
+      subnet_id:                         "subnet-03907b7d6f52a2222"
+      tags.%:                            "1"
+      tags.Name:                         "project_2_bastion_server_zone_b"
+      tenancy:                           <computed>
+      user_data:                         "c72996f0c159438d04705e005494b573dc848e1f"
+      volume_tags.%:                     <computed>
+      vpc_security_group_ids.#:          "1"
+      vpc_security_group_ids.4101892314: "sg-03c1c9379b70d251a"
+[0m
+[0m[32m  [32m+[0m [32maws_instance.project_webserver_a
+[0m      id:                                <computed>
+      ami:                               "ami-ba602bc2"
+      arn:                               <computed>
+      associate_public_ip_address:       "true"
+      availability_zone:                 <computed>
+      cpu_core_count:                    <computed>
+      cpu_threads_per_core:              <computed>
+      ebs_block_device.#:                <computed>
+      ephemeral_block_device.#:          <computed>
+      get_password_data:                 "false"
+      iam_instance_profile:              "webserver_profile"
+      instance_state:                    <computed>
+      instance_type:                     "t2.micro"
+      ipv6_address_count:                <computed>
+      ipv6_addresses.#:                  <computed>
+      key_name:                          "udacity_student"
+      network_interface.#:               <computed>
+      network_interface_id:              <computed>
+      password_data:                     <computed>
+      placement_group:                   <computed>
+      primary_network_interface_id:      <computed>
+      private_dns:                       <computed>
+      private_ip:                        <computed>
+      public_dns:                        <computed>
+      public_ip:                         <computed>
+      root_block_device.#:               <computed>
+      security_groups.#:                 <computed>
+      source_dest_check:                 "true"
+      subnet_id:                         "subnet-01660dd8f3a3bc286"
+      tags.%:                            "1"
+      tags.Name:                         "project_2_server_zone_a"
+      tenancy:                           <computed>
+      user_data:                         "16fa44ba1486ddcc1c9a844702487abbaa61fce7"
+      volume_tags.%:                     <computed>
+      vpc_security_group_ids.#:          "1"
+      vpc_security_group_ids.1219528436: "sg-07ea4ab7085d0c3a2"
+[0m
+[0m[32m  [32m+[0m [32maws_instance.project_webserver_b
+[0m      id:                                <computed>
+      ami:                               "ami-ba602bc2"
+      arn:                               <computed>
+      associate_public_ip_address:       "true"
+      availability_zone:                 <computed>
+      cpu_core_count:                    <computed>
+      cpu_threads_per_core:              <computed>
+      ebs_block_device.#:                <computed>
+      ephemeral_block_device.#:          <computed>
+      get_password_data:                 "false"
+      iam_instance_profile:              "webserver_profile"
+      instance_state:                    <computed>
+      instance_type:                     "t2.micro"
+      ipv6_address_count:                <computed>
+      ipv6_addresses.#:                  <computed>
+      key_name:                          "udacity_student"
+      network_interface.#:               <computed>
+      network_interface_id:              <computed>
+      password_data:                     <computed>
+      placement_group:                   <computed>
+      primary_network_interface_id:      <computed>
+      private_dns:                       <computed>
+      private_ip:                        <computed>
+      public_dns:                        <computed>
+      public_ip:                         <computed>
+      root_block_device.#:               <computed>
+      security_groups.#:                 <computed>
+      source_dest_check:                 "true"
+      subnet_id:                         "subnet-0178385a4cbb0b1e4"
+      tags.%:                            "1"
+      tags.Name:                         "project_2_server_zone_b"
+      tenancy:                           <computed>
+      user_data:                         "8e4501bd57ed20c85840f2a2e05aa314907530e5"
+      volume_tags.%:                     <computed>
+      vpc_security_group_ids.#:          "1"
+      vpc_security_group_ids.1289621180: "sg-0b294b43962dcb8a0"
+[0m
+[0m
+[0m[1mPlan:[0m 6 to add, 0 to change, 0 to destroy.[0m
+
+------------------------------------------------------------------------
+
+Note: You didn't specify an "-out" parameter to save this plan, so Terraform
+can't guarantee that exactly these actions will be performed if
+"terraform apply" is subsequently run.
+

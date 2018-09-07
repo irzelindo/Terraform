@@ -1,16 +1,16 @@
 variable "region" {
   description = "The AWS region to create resources in."
-  default     = "us-west-2"
+  default     = "eu-central-1"
 }
 
 variable "access_key" {
   description = "The aws access key."
-  default     = ""
+  default     = "AKIAJKA3RHYKR6DJEH6Q"
 }
 
 variable "secret_key" {
   description = "The aws secret key."
-  default     = ""
+  default     = "eQks9D/pvpEYqedGL6KmEyUKz1BQU1E61X6y4SsL"
 }
 
 variable "pem_key" {
