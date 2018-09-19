@@ -1,16 +1,28 @@
 variable "region" {
   description = "The AWS region to create resources in."
+<<<<<<< HEAD
   default     = "us-east-2"
+=======
+  default     = "eu-central-1"
+>>>>>>> 54197b61c31c317fa02c3d0f89052106d4e82ae3
 }
 
 variable "access_key" {
   description = "The aws access key."
+<<<<<<< HEAD
   default     = "AKIA2T5NZIQTUA2EJTWM"
+=======
+  default     = "AKIAJKA3RHYKR6DJEH6Q"
+>>>>>>> 54197b61c31c317fa02c3d0f89052106d4e82ae3
 }
 
 variable "secret_key" {
   description = "The aws secret key."
+<<<<<<< HEAD
   default     = "dz61XWpT7uT6Jrmli034XhE72aZ24+Sq/fCC3RMF"
+=======
+  default     = "eQks9D/pvpEYqedGL6KmEyUKz1BQU1E61X6y4SsL"
+>>>>>>> 54197b61c31c317fa02c3d0f89052106d4e82ae3
 }
 
 variable "pem_key" {
@@ -18,6 +30,7 @@ variable "pem_key" {
   description = "ssh key for EC2 machines"
 }
 
+<<<<<<< HEAD
 variable "ami_type" {
   default     = "ami-0552e3455b9bc8d50"
   description = "Ubuntu Server 16.04 LTS (HVM), SSD Volume Type for the Ohio Region"
@@ -28,6 +41,8 @@ variable "random_s3_name" {
   default     = "server-files-bucket"
 }
 
+=======
+>>>>>>> 54197b61c31c317fa02c3d0f89052106d4e82ae3
 variable "DNS_Zone" {
   default     = "p2.internal"
   description = "set dns name"

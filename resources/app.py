@@ -7,7 +7,11 @@ from wtforms.validators import DataRequired
 
 from flask_bootstrap import Bootstrap
 
+<<<<<<< HEAD
 #from datasploit.domain import domain_subdomains
+=======
+from datasploit.domain import domain_subdomains
+>>>>>>> 54197b61c31c317fa02c3d0f89052106d4e82ae3
 
 app = Flask(__name__)
 mysql = MySQL()

@@ -18,7 +18,11 @@ resource "aws_subnet" "Public_webserver_zone_a" {
     Name = "Public Web Server Zone A"
   }
 
+<<<<<<< HEAD
   availability_zone = "${var.region}a"
+=======
+  availability_zone = "us-west-2a"
+>>>>>>> 54197b61c31c317fa02c3d0f89052106d4e82ae3
 }
 
 resource "aws_route_table_association" "Public_webserver_zone_a" {
@@ -34,7 +38,11 @@ resource "aws_subnet" "Public_webserver_zone_b" {
     Name = "Public Web Server Zone B"
   }
 
+<<<<<<< HEAD
   availability_zone = "${var.region}b"
+=======
+  availability_zone = "us-west-2b"
+>>>>>>> 54197b61c31c317fa02c3d0f89052106d4e82ae3
 }
 
 resource "aws_route_table_association" "Public_webserver_zone_b" {
@@ -50,7 +58,11 @@ resource "aws_subnet" "Public_bastion_zone_a" {
     Name = "Public Bastion Zone A"
   }
 
+<<<<<<< HEAD
   availability_zone = "${var.region}a"
+=======
+  availability_zone = "us-west-2a"
+>>>>>>> 54197b61c31c317fa02c3d0f89052106d4e82ae3
 }
 
 resource "aws_route_table_association" "Public_bastion_zone_a" {
@@ -66,7 +78,11 @@ resource "aws_subnet" "Public_bastion_zone_b" {
     Name = "Public Bastion Zone B"
   }
 
+<<<<<<< HEAD
   availability_zone = "${var.region}b"
+=======
+  availability_zone = "us-west-2b"
+>>>>>>> 54197b61c31c317fa02c3d0f89052106d4e82ae3
 }
 
 resource "aws_route_table_association" "Public_bastion_zone_b" {
@@ -82,7 +98,11 @@ resource "aws_subnet" "Private-db-zone-a" {
     Name = "Private DB zone a"
   }
 
+<<<<<<< HEAD
   availability_zone = "${var.region}a"
+=======
+  availability_zone = "us-west-2a"
+>>>>>>> 54197b61c31c317fa02c3d0f89052106d4e82ae3
 }
 
 resource "aws_route_table_association" "Private-db-zone-a" {
@@ -98,7 +118,11 @@ resource "aws_subnet" "Private-db-zone-b" {
     Name = "Private DB zone b"
   }
 
+<<<<<<< HEAD
   availability_zone = "${var.region}b"
+=======
+  availability_zone = "us-west-2b"
+>>>>>>> 54197b61c31c317fa02c3d0f89052106d4e82ae3
 }
 
 resource "aws_route_table_association" "Private-db-zone-b" {
