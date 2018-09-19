@@ -44,7 +44,7 @@ resource "aws_instance" "bastion_server_b" {
 
 resource "aws_instance" "project_webserver_a" {
 
-  ami                         = "ami-ba602bc2"
+  ami                         = "${var.ami_type}"
   instance_type               = "t2.micro"
   key_name                    = "${var.pem_key}"
   subnet_id                   = "${aws_subnet.Public_webserver_zone_a.id}"
@@ -60,10 +60,12 @@ resource "aws_instance" "project_webserver_a" {
   #!/bin/bash
   sudo apt-get update
   sudo apt-get -y install awscli
+  sleep 60
   sudo mkdir /srv/www
   aws s3 cp s3://"${aws_s3_bucket.server-files-bucket.bucket}"/server-files.tar.gz /srv/www/server-files.tar.gz
   aws s3 cp s3://"${aws_s3_bucket.server-files-bucket.bucket}"/bootstrap.sh /tmp/bootstrap.sh
-  sudo chmod +x /tmp/bootstrap.sh
+  sleep 60
+  sudo chmod 777 /tmp/bootstrap.sh
   sudo  /tmp/bootstrap.sh > /tmp/stdout.txt 2> /tmp/stderr.txt
   EOF
 }
@@ -86,10 +88,12 @@ resource "aws_instance" "project_webserver_b" {
   #!/bin/bash
   sudo apt-get update
   sudo apt-get -y install awscli
+  sleep 60
   sudo mkdir /srv/www
   aws s3 cp s3://"${aws_s3_bucket.server-files-bucket.bucket}"/server-files.tar.gz /srv/www/server-files.tar.gz
   aws s3 cp s3://"${aws_s3_bucket.server-files-bucket.bucket}"/bootstrap.sh /tmp/bootstrap.sh
-  sudo chmod +x /tmp/bootstrap.sh
+  sleep 60
+  sudo chmod 777 /tmp/bootstrap.sh
   sudo  /tmp/bootstrap.sh > stdout.txt 2> stderr.txt
   EOF
 }

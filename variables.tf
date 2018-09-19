@@ -1,16 +1,16 @@
 variable "region" {
   description = "The AWS region to create resources in."
-  default     = "us-west-2"
+  default     = "us-east-2"
 }
 
 variable "access_key" {
   description = "The aws access key."
-  default     = ""
+  default     = "AKIA2T5NZIQTUA2EJTWM"
 }
 
 variable "secret_key" {
   description = "The aws secret key."
-  default     = ""
+  default     = "dz61XWpT7uT6Jrmli034XhE72aZ24+Sq/fCC3RMF"
 }
 
 variable "pem_key" {
@@ -19,8 +19,8 @@ variable "pem_key" {
 }
 
 variable "ami_type" {
-  default     = "ami-ba602bc2"
-  description = "Ubuntu Server 16.04 LTS (HVM), SSD Volume Type for the Oregon Region"
+  default     = "ami-0552e3455b9bc8d50"
+  description = "Ubuntu Server 16.04 LTS (HVM), SSD Volume Type for the Ohio Region"
 }
 
 variable "random_s3_name" {
